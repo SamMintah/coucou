@@ -22,6 +22,7 @@ settings:
       CODE_SIGN_IDENTITY: "Developer ID Application"
       DEVELOPMENT_TEAM: 256AUJ9555
       OTHER_CODE_SIGN_FLAGS: "--timestamp"
+      CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
       CODE_SIGN_ENTITLEMENTS: Resources/Coucou.entitlements
 
 schemes:
@@ -60,14 +61,16 @@ targets:
         CFBundleName: Coucou
         CFBundleDisplayName: Coucou
         CFBundleIdentifier: fr.louisraille.NotchBuddy
-        CFBundleVersion: "2"
-        CFBundleShortVersionString: "0.1.1"
+        CFBundleVersion: "7"
+        CFBundleShortVersionString: "0.1.6"
         CFBundlePackageType: APPL
         LSUIElement: YES
         NSHighResolutionCapable: YES
         NSSupportsAutomaticGraphicsSwitching: YES
-        NSAppleEventsUsageDescription: "Pour sauter au terminal et envoyer des mails."
+        NSAppleEventsUsageDescription: "Pour sauter au terminal, envoyer des mails et piloter Musique."
         NSAccessibilityUsageDescription: "Pour lire le titre de la fenêtre active et l'attacher comme contexte."
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: fr.louisraille.NotchBuddy
@@ -94,7 +97,7 @@ targets:
         CFBundleName: Coucou
         CFBundleDisplayName: Coucou
         CFBundleIdentifier: fr.louisraille.Coucou
-        CFBundleVersion: "2"
+        CFBundleVersion: "4"
         CFBundleShortVersionString: "1.0"
         CFBundlePackageType: APPL
         LSUIElement: YES
@@ -102,6 +105,8 @@ targets:
         NSSupportsAutomaticGraphicsSwitching: YES
         LSApplicationCategoryType: public.app-category.developer-tools
         ITSAppUsesNonExemptEncryption: NO
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: fr.louisraille.Coucou
@@ -114,3 +119,4 @@ targets:
         CODE_SIGN_ENTITLEMENTS: Resources/CoucouAppStore.entitlements
         DEVELOPMENT_TEAM: 256AUJ9555
         SWIFT_ACTIVE_COMPILATION_CONDITIONS: APPSTORE
+        CODE_SIGNING_ALLOWED: YES
